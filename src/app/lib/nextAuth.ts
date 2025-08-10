@@ -8,4 +8,15 @@ export const authOptions:AuthOptions = {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         }),
     ],
+    session:{
+        strategy: "jwt",
+        maxAge: 1 * 24 * 60 * 60, // 1 day
+    },
+    jwt: {
+        // JWT encoding options configuration
+    },
+    callbacks: {
+        // signIn, session callbacks
+    },
+    secret: process.env.NEXTAUTH_SECRET,
 }
